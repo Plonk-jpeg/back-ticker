@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    --pv: calc(1px / 2)
+}
+
+@keyframes ticker-l {
+    0% {
+        transform: translate(0, 0)
+    }
+
+    100% {
+        transform: translate(-50%, 0)
+    }
+}
+
+@keyframes ticker-r {
+    0% {
+        transform: translate(0, 0)
+    }
+
+    100% {
+        transform: translate(50%, 0)
+    }
+}
+
+.back-ticker {
+    position: relative;
+    width: 100%;
+    height: 185px;
+}
+
+.back-ticker div:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(155 * var(--pv));
+    overflow: hidden;
+}
+
+.back-ticker div:nth-child(2) {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: calc(295 * var(--pv));
+    overflow: hidden;
+}
+
+.back-ticker div:nth-child(3) {
+    position: absolute;
+    left: 0;
+    bottom: -119px;
+    width: 100%;
+    height: calc(155 * var(--pv));
+    overflow: hidden;
+}
+
+.back-ticker div:nth-child(1) span {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: calc(12932 * var(--pv));
+    height: calc(290 * var(--pv));
+    background: url("ticker.png") left center repeat-x;
+    opacity: 0.15;
+    background-size: contain;
+    animation: ticker-r 60.0s linear infinite;
+}
+
+.back-ticker div:nth-child(2) span {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc(12932 * var(--pv));
+    height: calc(290 * var(--pv));
+    background: url("ticker.png") left center repeat-x;
+    opacity: 0.6;
+    background-size: contain;
+    animation: ticker-l 30.0s linear infinite;
+}
+
+.back-ticker div:nth-child(3) span {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: calc(12932 * var(--pv));
+    height: calc(290 * var(--pv));
+    background: url("ticker.png") left center repeat-x;
+    opacity: 0.3;
+    background-size: contain;
+    animation: ticker-r 45.0s linear infinite;
+
+}
